@@ -74,7 +74,7 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
             id="total-amount"
             className="text-3xl text-blue-400 font-semibold"
           >
-            Total Pledged: ${totalAmount.toLocaleString()}
+            Total Pledged: RM{totalAmount.toLocaleString()}
           </div>
         </div>
 
@@ -94,7 +94,7 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
                   {podiumPlaces[1].organization}
                 </p>
                 <p className="text-2xl text-gray-300">
-                  ${podiumPlaces[1].amount.toLocaleString()}
+                  RM{podiumPlaces[1].amount.toLocaleString()}
                 </p>
               </div>
               <div className="h-40 bg-gray-700 w-full rounded-b-lg"></div>
@@ -113,7 +113,7 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
                 <h3 className="font-bold text-2xl">{podiumPlaces[0].name}</h3>
                 <p className="text-gray-400">{podiumPlaces[0].organization}</p>
                 <p className="text-3xl font-bold text-yellow-400">
-                  ${podiumPlaces[0].amount.toLocaleString()}
+                  RM{podiumPlaces[0].amount.toLocaleString()}
                 </p>
               </div>
               <div className="h-48 bg-gray-700 w-full rounded-b-lg"></div>
@@ -134,7 +134,7 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
                   {podiumPlaces[2].organization}
                 </p>
                 <p className="text-xl text-amber-700">
-                  ${podiumPlaces[2].amount.toLocaleString()}
+                  RM{podiumPlaces[2].amount.toLocaleString()}
                 </p>
               </div>
               <div className="h-32 bg-gray-700 w-full rounded-b-lg"></div>
@@ -172,7 +172,7 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
                     )}
                   </h3>
                   <div className="text-2xl font-bold text-blue-400">
-                    ${pledge.amount.toLocaleString()}
+                    RM{pledge.amount.toLocaleString()}
                   </div>
                 </div>
               </div>
@@ -253,9 +253,13 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
                     </div>
                   </div>
                   <div class="bg-gray-800 p-4 rounded-t-lg">
-                    <h3 class="font-bold text-xl">\${podiumPlaces[1].name}</h3>
-                    <p class="text-gray-400 text-sm">\${podiumPlaces[1].organization || ''}</p>
-                    <p class="text-2xl text-gray-300">$\${podiumPlaces[1].amount.toLocaleString()}</p>
+                    <h3 class="font-bold text-xl">${podiumPlaces[1].name}</h3>
+                    <p class="text-gray-400 text-sm">${
+            podiumPlaces[1].organization || ""
+          }</p>
+                    <p class="text-2xl text-gray-300">RM${
+            podiumPlaces[1].amount.toLocaleString()
+          }</p>
                   </div>
                   <div class="h-40 bg-gray-700 w-full rounded-b-lg"></div>
                 </div>
@@ -274,7 +278,7 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
                   <div class="bg-gray-800 p-4 rounded-t-lg">
                     <h3 class="font-bold text-2xl">\${podiumPlaces[0].name}</h3>
                     <p class="text-gray-400">\${podiumPlaces[0].organization || ''}</p>
-                    <p class="text-3xl font-bold text-yellow-400">$\${podiumPlaces[0].amount.toLocaleString()}</p>
+                    <p class="text-3xl font-bold text-yellow-400">RM\${podiumPlaces[0].amount.toLocaleString()}</p>
                   </div>
                   <div class="h-48 bg-gray-700 w-full rounded-b-lg"></div>
                 </div>
@@ -293,7 +297,7 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
                   <div class="bg-gray-800 p-4 rounded-t-lg">
                     <h3 class="font-bold text-lg">\${podiumPlaces[2].name}</h3>
                     <p class="text-gray-400 text-sm">\${podiumPlaces[2].organization || ''}</p>
-                    <p class="text-xl text-amber-700">$\${podiumPlaces[2].amount.toLocaleString()}</p>
+                    <p class="text-xl text-amber-700">RM\${podiumPlaces[2].amount.toLocaleString()}</p>
                   </div>
                   <div class="h-32 bg-gray-700 w-full rounded-b-lg"></div>
                 </div>
@@ -315,7 +319,7 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
               const totalEl = document.getElementById('total-amount');
               if (totalEl) {
                 totalEl.style.animation = 'pulse 0.5s ease-in-out';
-                totalEl.textContent = 'Total Pledged: $' + (totalAmount || 0).toLocaleString();
+                totalEl.textContent = 'Total Pledged: RM' + (totalAmount || 0).toLocaleString();
                 totalEl.addEventListener('animationend', () => {
                   totalEl.style.animation = '';
                 });
@@ -353,7 +357,7 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
                               ''}
                           </h3>
                           <div class="text-2xl font-bold text-blue-400">
-                            $\${pledge.amount.toLocaleString()}
+                            RM\${pledge.amount.toLocaleString()}
                           </div>
                         </div>
                       </div>
