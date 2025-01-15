@@ -65,7 +65,7 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
           </h1>
           {existingPledge && (
             <div className="mt-2 text-gray-600">
-              Your current pledge: ${existingPledge.amount.toLocaleString()}
+              Your current pledge: RM{existingPledge.amount.toLocaleString()}
             </div>
           )}
         </div>
@@ -113,7 +113,7 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
 
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Pledge Amount ($)
+                Pledge Amount (RM)
               </label>
               <input
                 type="number"
@@ -125,7 +125,7 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
               />
               {existingPledge && (
                 <p className="mt-1 text-sm text-gray-500">
-                  Previous amount: ${existingPledge.amount.toLocaleString()}
+                  Previous amount: RM{existingPledge.amount.toLocaleString()}
                 </p>
               )}
             </div>
