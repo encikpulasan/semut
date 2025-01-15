@@ -21,16 +21,34 @@ jobs:
       - name: Install Deno
         uses: denoland/setup-deno@v2
         with:
-          deno-version: v1.x
+          node-version: "20"
 
-      - name: Build step
-        run: "# Install Tailwind and dependencies       - name: Install Tailwind         run: |           npm init -y           npm install -D tailwindcss           npx tailwindcss init        # Generate Tailwind CSS       - name: Build Tailwind CSS         run: |           npx tailwindcss -i ./src/input.css -o ./static/styles.css"
+      # Set up Deno
+      - name: Set up Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v2.x
 
-      - name: Upload to Deno Deploy
+      # Install Tailwind and dependencies
+      - name: Install Tailwind
+        run: |
+          npm init -y
+          npm install -D tailwindcss
+          npx tailwindcss init
+
+      # Generate Tailwind CSS
+      - name: Build Tailwind CSS
+        run: |
+          npx tailwindcss -i ./src/input.css -o ./static/styles.css
+
+      # Optional: Run tests
+      - name: Run tests
+        run: deno test
+
+      # Deploy to Deno Deploy
+      - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "encikpulasan-semut"
-          entrypoint: ""
-          root: ""
-          
-          
+          project: encikpulasan-semut # Replace with your Deno Deploy project name
+          entrypoint: main.ts # Your main server file
+          root: . # Project root directory
