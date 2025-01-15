@@ -116,7 +116,7 @@ export const handler: Handlers<AdminData> = {
                 userPledges.sort((a, b) =>
                     new Date(b.timestamp!).getTime() -
                     new Date(a.timestamp!).getTime()
-                )[0]
+                )[0],
         );
 
         const totalAmount = latestPledges.reduce((sum, p) => sum + p.amount, 0);
@@ -217,7 +217,7 @@ export default function Admin({ data }: PageProps<AdminData>) {
                             Total Pledged
                         </h3>
                         <p className="text-2xl font-bold text-gray-900">
-                            ${data.stats.totalAmount.toLocaleString()}
+                            RM{data.stats.totalAmount.toLocaleString()}
                         </p>
                     </div>
                     <div className="bg-white rounded-lg shadow p-6">
@@ -225,7 +225,7 @@ export default function Admin({ data }: PageProps<AdminData>) {
                             Average Pledge
                         </h3>
                         <p className="text-2xl font-bold text-gray-900">
-                            ${Math.round(data.stats.averagePledge)
+                            RM{Math.round(data.stats.averagePledge)
                                 .toLocaleString()}
                         </p>
                     </div>
@@ -245,7 +245,7 @@ export default function Admin({ data }: PageProps<AdminData>) {
                             {data.stats.topDonor?.name}
                         </p>
                         <p className="text-sm text-gray-500">
-                            ${data.stats.topDonor?.amount.toLocaleString()}
+                            RM{data.stats.topDonor?.amount.toLocaleString()}
                         </p>
                     </div>
                 </div>
@@ -338,7 +338,7 @@ export default function Admin({ data }: PageProps<AdminData>) {
                                                     .toLocaleString()}
                                             </td>
                                             <td className="py-2">
-                                                ${pledge.amount
+                                                RM{pledge.amount
                                                     .toLocaleString()}
                                             </td>
                                             <td className="py-2">
