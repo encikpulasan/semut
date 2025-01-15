@@ -1,0 +1,31 @@
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Fresh build directory
+_fresh/
+# npm dependencies
+node_modules/
+
+# Deno
+.DS_Store
+*.log
+.env
+
+# Dependency directories
+node_modules/
+.deno/
+
+# Build output
+dist/
+build/
+
+# Local development files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
