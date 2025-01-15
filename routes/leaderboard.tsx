@@ -66,7 +66,7 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white py-8 overflow-x-hidden">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-48">
           <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 text-transparent bg-clip-text">
             Top Supporters
           </h1>
@@ -246,7 +246,7 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
             // Second Place
             if (podiumPlaces[1]) {
               podiumHTML += \`
-                <div class="w-64 text-center">
+                <div class=" w-64 text-center">
                   <div class="mb-2">
                     <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center border-4 border-gray-300 shadow-lg transform hover:scale-105 transition-transform duration-300">
                       <span class="text-4xl font-bold text-white">2</span>
