@@ -1,21 +1,22 @@
 {
   "tasks": {
-    "start": "deno run -A --unstable-kv --watch=static/,routes/ dev.ts"
+    "start": "deno run -A --unstable-kv --watch=static/,routes/ dev.ts",
+    "build": "deno run -A dev.ts build",
+    "preview": "deno run -A main.ts"
   },
   "imports": {
-    "$fresh/": "https://deno.land/x/fresh@1.6.1/",
-    "preact": "https://esm.sh/preact@10.19.2",
-    "preact/": "https://esm.sh/preact@10.19.2/",
-    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
-    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0",
+    "$fresh/": "https://deno.land/x/fresh@1.7.3/",
+    "preact": "https://esm.sh/preact@10.22.0",
+    "preact/": "https://esm.sh/preact@10.22.0/",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
     "$std/": "https://deno.land/std@0.217.0/",
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
     "@antv/g2": "https://esm.sh/@antv/g2@5.0.0"
   },
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact"
-  }
+  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
+  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
+  "exclude": ["**/_fresh/*"]
 }
