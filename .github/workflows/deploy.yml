@@ -1,0 +1,57 @@
+name: Deploy to Deno Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout your repository
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Set up Node.js for Tailwind
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Set up Deno
+      - name: Set up Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v2.x
+
+      # Install Tailwind and dependencies
+      - name: Install Tailwind
+        run: |
+          npm init -y
+          npm install -D tailwindcss
+          npx tailwindcss init
+
+      # Generate Tailwind CSS
+      - name: Build Tailwind CSS
+        run: |
+          npx tailwindcss -i ./src/input.css -o ./static/styles.css
+
+      # Optional: Run tests
+      - name: Run tests
+        run: deno test
+
+      # Deploy to Deno Deploy
+      - name: Deploy to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: semut # Replace with your Deno Deploy project name
+          entrypoint: main.ts # Your main server file
+          root: . # Project root directory
