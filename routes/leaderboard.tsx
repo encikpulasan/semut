@@ -253,11 +253,11 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
                     </div>
                   </div>
                   <div class="bg-gray-800 p-4 rounded-t-lg">
-                    <h3 class="font-bold text-xl">${podiumPlaces[1].name}</h3>
-                    <p class="text-gray-400 text-sm">${
+                    <h3 class="font-bold text-xl">\${podiumPlaces[1].name}</h3>
+                    <p class="text-gray-400 text-sm">\${
             podiumPlaces[1].organization || ""
           }</p>
-                    <p class="text-2xl text-gray-300">RM${
+                    <p class="text-2xl text-gray-300">RM\${
             podiumPlaces[1].amount.toLocaleString()
           }</p>
                   </div>
