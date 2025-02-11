@@ -34,6 +34,7 @@ export const handler: Handlers<PledgePageData> = {
         name: formData.get("name") as string,
         organization: formData.get("organization") as string || undefined,
         amount: Number(formData.get("amount")),
+        phone: formData.get("phone") as string,
         email: formData.get("email") as string,
       };
 
@@ -128,6 +129,20 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
                   Previous amount: RM{existingPledge.amount.toLocaleString()}
                 </p>
               )}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Phone Number
+              </label>
+              <input
+                type="phone"
+                name="phone"
+                value={existingPledge?.phone}
+                className="mt-1 w-full p-3 border rounded-md"
+                required
+                readOnly={!!existingPledge}
+              />
             </div>
 
             <div>

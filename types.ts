@@ -3,6 +3,7 @@ export interface Pledge {
   name: string;
   organization?: string;
   amount: number;
+  phone: string;
   email: string;
   sessionId?: string;
   timestamp?: string;
