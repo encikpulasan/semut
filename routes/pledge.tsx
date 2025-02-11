@@ -168,7 +168,7 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
                 type="checkbox"
                 value=""
                 name="ikrar"
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-200 rounded-md focus:ring-blue-500 focus:ring-2"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-200 rounded-md focus:ring-blue-500 focus:ring-2 focus:rounded-md"
               />
               <label
                 for="ikrar"
