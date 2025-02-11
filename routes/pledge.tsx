@@ -58,7 +58,7 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
   return (
     <div
       className="bg-repeat bg-center min-h-screen bg-gray-50 py-12 px-4"
-      style="background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url(https://img.freepik.com/free-vector/light-colors-ornamental-pattern-background_1268-794.jpg);"
+      style="background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(https://img.freepik.com/free-vector/light-colors-ornamental-pattern-background_1268-794.jpg);"
     >
       <div className="max-w-md mx-auto">
         <div className="text-center mb-8">
