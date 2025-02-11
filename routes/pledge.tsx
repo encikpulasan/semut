@@ -56,7 +56,7 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
   const { existingPledge, success, error } = data;
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 z-0">
+    <div className="relative min-h-screen bg-gray-50 py-12 px-4 z-0">
       <div
         className="bg-repeat bg-center min-h-screen opacity-40 bg-gray-50 z-10"
         style="background-image: url(https://img.freepik.com/free-vector/light-colors-ornamental-pattern-background_1268-794.jpg);"
