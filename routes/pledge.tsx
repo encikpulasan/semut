@@ -62,6 +62,13 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
     >
       <div className="max-w-md mx-auto">
         <div className="text-center mb-8">
+          <div class="w-32 h-32 mx-auto bg-[rgb(247,247,247)] shadow-lg rounded-full overflow-hidden">
+            <img
+              class="w-32 h-32 mt-1"
+              src="https://scontent.fkul4-4.fna.fbcdn.net/v/t39.30808-6/272446542_126415173207768_4664783751978214270_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=SPpKc8a3fAMQ7kNvgG_Kgf9&_nc_oc=AdjYvL_jP_4wdX15lHQ7JQPwxR1VlyJVYZIu3Opd3d6jBBDG7DF6J0wmfQ6c0kpGXd8&_nc_zt=23&_nc_ht=scontent.fkul4-4.fna&_nc_gid=AF9gp8if8qB2igZcZwkzuph&oh=00_AYBYzGQVOxzdski29Y4kuglVJSDCXfF7321u70wZjT4w1A&oe=67C089C6"
+              alt="#AnakTBQ"
+            />
+          </div>
           <h1 className="text-3xl font-bold text-gray-900">
             {existingPledge
               ? "Ikrar Bantuan Kepada #AnakTBQ"
