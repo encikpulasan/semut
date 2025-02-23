@@ -64,36 +64,36 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white py-8 overflow-x-hidden">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="lg:max-w-[80%] max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-48">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 text-transparent bg-clip-text">
-            Top Supporters
-          </h1>
-          <div
-            id="total-amount"
-            className="text-3xl text-blue-400 font-semibold"
-          >
-            Total Pledged: RM{totalAmount.toLocaleString()}
+          <div className="lg:text-6xl text-4xl text-white font-semibold mb-6">
+            Jumlah Ikrar
           </div>
+          <h1
+            id="total-amount"
+            className="lg:text-9xl text-6xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 text-transparent bg-clip-text"
+          >
+            RM{totalAmount.toLocaleString()}
+          </h1>
         </div>
 
         {/* Podium Section */}
         <div className="flex justify-center items-end mb-20 space-x-4 h-80">
           {/* Second Place */}
           {podiumPlaces[1] && (
-            <div className="w-64 text-center">
+            <div className="lg:w-1/3 w-64 text-center">
               <div className="mb-2">
                 <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center border-4 border-gray-300 shadow-lg transform hover:scale-105 transition-transform duration-300">
                   <span className="text-4xl font-bold text-white">2</span>
                 </div>
               </div>
               <div className="bg-gray-800 p-4 rounded-t-lg">
-                <h3 className="font-bold text-xl">{podiumPlaces[1].name}</h3>
+                <h3 className="font-bold text-2xl">{podiumPlaces[1].name}</h3>
                 <p className="text-gray-400 text-sm">
                   {podiumPlaces[1].organization}
                 </p>
-                <p className="text-2xl text-gray-300">
+                <p className="text-2xl font-bold text-gray-300">
                   RM{podiumPlaces[1].amount.toLocaleString()}
                 </p>
               </div>
@@ -103,14 +103,14 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
 
           {/* First Place */}
           {podiumPlaces[0] && (
-            <div className="w-64 text-center -mt-12">
+            <div className="lg:w-1/3 w-64 text-center -mt-12">
               <div className="mb-2">
                 <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center border-4 border-yellow-400 shadow-lg transform hover:scale-105 transition-transform duration-300">
                   <span className="text-5xl font-bold text-white">1</span>
                 </div>
               </div>
               <div className="bg-gray-800 p-4 rounded-t-lg">
-                <h3 className="font-bold text-2xl">{podiumPlaces[0].name}</h3>
+                <h3 className="font-bold text-4xl">{podiumPlaces[0].name}</h3>
                 <p className="text-gray-400">{podiumPlaces[0].organization}</p>
                 <p className="text-3xl font-bold text-yellow-400">
                   RM{podiumPlaces[0].amount.toLocaleString()}
@@ -122,18 +122,18 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
 
           {/* Third Place */}
           {podiumPlaces[2] && (
-            <div className="w-64 text-center">
+            <div className="lg:w-1/3 w-64 text-center">
               <div className="mb-2">
                 <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-amber-700 to-amber-800 flex items-center justify-center border-4 border-amber-700 shadow-lg transform hover:scale-105 transition-transform duration-300">
                   <span className="text-3xl font-bold text-white">3</span>
                 </div>
               </div>
               <div className="bg-gray-800 p-4 rounded-t-lg">
-                <h3 className="font-bold text-lg">{podiumPlaces[2].name}</h3>
+                <h3 className="font-bold text-xl">{podiumPlaces[2].name}</h3>
                 <p className="text-gray-400 text-sm">
                   {podiumPlaces[2].organization}
                 </p>
-                <p className="text-xl text-amber-700">
+                <p className="text-xl font-bold text-amber-700">
                   RM{podiumPlaces[2].amount.toLocaleString()}
                 </p>
               </div>
@@ -246,18 +246,18 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
             // Second Place
             if (podiumPlaces[1]) {
               podiumHTML += \`
-                <div class=" w-64 text-center">
+                <div class=" lg:w-1/3 w-64 text-center">
                   <div class="mb-2">
                     <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center border-4 border-gray-300 shadow-lg transform hover:scale-105 transition-transform duration-300">
                       <span class="text-4xl font-bold text-white">2</span>
                     </div>
                   </div>
                   <div class="bg-gray-800 p-4 rounded-t-lg">
-                    <h3 class="font-bold text-xl">\${podiumPlaces[1].name}</h3>
+                    <h3 class="font-bold text-2xl">\${podiumPlaces[1].name}</h3>
                     <p class="text-gray-400 text-sm">\${
             podiumPlaces[1].organization || ""
           }</p>
-                    <p class="text-2xl text-gray-300">RM\${
+                    <p class="text-2xl font-bold text-gray-300">RM\${
             podiumPlaces[1].amount.toLocaleString()
           }</p>
                   </div>
@@ -269,14 +269,14 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
             // First Place
             if (podiumPlaces[0]) {
               podiumHTML += \`
-                <div class="w-64 text-center -mt-12">
+                <div class="lg:w-1/3 w-64 text-center -mt-12">
                   <div class="mb-2">
                     <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center border-4 border-yellow-400 shadow-lg transform hover:scale-105 transition-transform duration-300">
                       <span class="text-5xl font-bold text-white">1</span>
                     </div>
                   </div>
                   <div class="bg-gray-800 p-4 rounded-t-lg">
-                    <h3 class="font-bold text-2xl">\${podiumPlaces[0].name}</h3>
+                    <h3 class="font-bold text-4xl">\${podiumPlaces[0].name}</h3>
                     <p class="text-gray-400">\${podiumPlaces[0].organization || ''}</p>
                     <p class="text-3xl font-bold text-yellow-400">RM\${podiumPlaces[0].amount.toLocaleString()}</p>
                   </div>
@@ -288,16 +288,16 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
             // Third Place
             if (podiumPlaces[2]) {
               podiumHTML += \`
-                <div class="w-64 text-center">
+                <div class="lg:w-1/3 w-64 text-center">
                   <div class="mb-2">
                     <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-amber-700 to-amber-800 flex items-center justify-center border-4 border-amber-700 shadow-lg transform hover:scale-105 transition-transform duration-300">
                       <span class="text-3xl font-bold text-white">3</span>
                     </div>
                   </div>
                   <div class="bg-gray-800 p-4 rounded-t-lg">
-                    <h3 class="font-bold text-lg">\${podiumPlaces[2].name}</h3>
+                    <h3 class="font-bold text-xl">\${podiumPlaces[2].name}</h3>
                     <p class="text-gray-400 text-sm">\${podiumPlaces[2].organization || ''}</p>
-                    <p class="text-xl text-amber-700">RM\${podiumPlaces[2].amount.toLocaleString()}</p>
+                    <p class="text-xl font-bold text-amber-700">RM\${podiumPlaces[2].amount.toLocaleString()}</p>
                   </div>
                   <div class="h-32 bg-gray-700 w-full rounded-b-lg"></div>
                 </div>
@@ -319,7 +319,7 @@ export default function Leaderboard({ data }: PageProps<LeaderboardData>) {
               const totalEl = document.getElementById('total-amount');
               if (totalEl) {
                 totalEl.style.animation = 'pulse 0.5s ease-in-out';
-                totalEl.textContent = 'Total Pledged: RM' + (totalAmount || 0).toLocaleString();
+                totalEl.textContent = 'RM' + (totalAmount || 0).toLocaleString();
                 totalEl.addEventListener('animationend', () => {
                   totalEl.style.animation = '';
                 });

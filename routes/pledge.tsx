@@ -64,12 +64,15 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900">
             {existingPledge
-              ? "Modify Your Pledge"
-              : "Support Children's Home Shelter"}
+              ? "Ikrar Bantuan Kepada #AnakTBQ"
+              : "Ikrar Bantuan Kepada #AnakTBQ"}
           </h1>
           {existingPledge && (
-            <div className="mt-2 text-gray-600">
-              Your current pledge: RM{existingPledge.amount.toLocaleString()}
+            <div className="mt-2 text-2xl text-gray-600">
+              Ikrar Saya:{" "}
+              <span className="text-green-500 font-bold">
+                RM{existingPledge.amount.toLocaleString()}
+              </span>
             </div>
           )}
         </div>
@@ -77,8 +80,8 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
         {success && (
           <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
             {existingPledge
-              ? "Pledge updated successfully!"
-              : "Thank you for your pledge!"}
+              ? "Terima Kasih, Ikrar berjaya dikemaskini!"
+              : "Terima Kasih, Ikrar berjaya direkodkan!"}
           </div>
         )}
 
@@ -92,7 +95,7 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
           <div className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Name
+                Nama
               </label>
               <input
                 type="text"
@@ -105,7 +108,7 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
 
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Organization (Optional)
+                Organisasi (Jika ada)
               </label>
               <input
                 type="text"
@@ -117,7 +120,7 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
 
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Pledge Amount (RM)
+                Jumlah Ikrar (RM)
               </label>
               <input
                 type="number"
@@ -129,14 +132,14 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
               />
               {existingPledge && (
                 <p className="mt-1 text-sm text-gray-500">
-                  Previous amount: RM{existingPledge.amount.toLocaleString()}
+                  Ikrar Terkini Saya: RM{existingPledge.amount.toLocaleString()}
                 </p>
               )}
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Phone Number
+                No. Telefon
               </label>
               <input
                 type="phone"
@@ -150,7 +153,7 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
 
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Email
+                Alamat Emel
               </label>
               <input
                 type="email"
@@ -162,7 +165,7 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
               />
             </div>
 
-            <div class="flex items-center ps-4 border border-gray-200 rounded-md">
+            <div class="flex items-center p-4 border border-gray-200 rounded-md">
               <input
                 id="ikrar"
                 type="checkbox"
@@ -172,7 +175,7 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
               />
               <label
                 for="ikrar"
-                class="w-full py-4 ms-4 text-sm font-medium text-gray-700"
+                class="w-full ms-4 text-sm font-medium text-gray-700"
               >
                 Dengan lafaz Bismillah, saya berikrar untuk menyumbangkan jumlah
                 yang dinyatakan diatas kepada Rumah Perlindungan Kanak-kanak TBQ
@@ -184,7 +187,7 @@ export default function PledgePage({ data }: PageProps<PledgePageData>) {
               type="submit"
               className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition duration-150"
             >
-              {existingPledge ? "Update Pledge" : "Submit Pledge"}
+              {existingPledge ? "Kemaskini Ikrar" : "Hantar Ikrar"}
             </button>
           </div>
         </form>
